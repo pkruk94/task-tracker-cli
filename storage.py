@@ -5,10 +5,11 @@ from typing import List
 FILENAME = "tasks.json"
 
 def load_tasks() -> List[dict]:
-    if not os.path.exists(FILENAME):
+    try:
+        with open(FILENAME, "r") as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
         return []
-    with open(FILENAME, "r") as f:
-        return json.load(f)
 
 def load_task_by_id(task_id: int) -> dict:
     tasks = load_tasks()
