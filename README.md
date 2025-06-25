@@ -52,3 +52,13 @@ Each task contains:
 ## Requirements
 Python 3.7+
 No external libraries required
+
+Command Line Usage
+After setting up the project and adding `task-cli` alias, you can use the CLI tool with commands like:
+
+```bash
+task-cli add "Buy groceries"
+task-cli list
+task-cli mark-done 1
+```
+
